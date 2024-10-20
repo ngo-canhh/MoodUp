@@ -56,7 +56,7 @@ for name in x_train.columns:
         scaler.fit(x_train)
         x_train = scaler.transform(x_train)
 x_test = preprocessing.OrdinalEncoder().fit_transform(x_test)
-'''
+.....'''
 cls = svm.SVC()
 cls.fit(x_train_processed, y_train_processed)
 
