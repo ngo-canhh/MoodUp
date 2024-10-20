@@ -20,7 +20,7 @@ number_to_label = {v: k for k, v in label_to_number.items()}
 y = y.map(label_to_number).values
 
 # Tách dataset
-x_train, x_, y_train, y_ = train_test_split(x, y, test_size=0.60, random_state=13)
+x_train, x_, y_train, y_ = train_test_split(x, y, test_size=0.80, random_state=13)
 x_cv, x_test, y_cv, y_test = train_test_split(x_, y_, test_size=0.50, random_state=10)
 
 # Lưu lại dataset

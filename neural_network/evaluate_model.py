@@ -13,6 +13,7 @@ number_to_label = data['number_to_label']
 
 # Predict
 predict = model.predict(x_test)
+yhat = np.argmax(tf.nn.softmax(predict).numpy(), axis= 1)
 
 # Hàm tính loss
 scce = tf.keras.losses.SparseCategoricalCrossentropy(from_logits = True)
