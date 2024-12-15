@@ -33,7 +33,7 @@ class_name = {
     0: 'Health',
     1: 'Depression'
 }
-data = "../datasets/final_dataset"
+data = "./datasets"
 
 train_data = pd.read_csv(os.path.join(data, 'train.csv'))[:10000]
 

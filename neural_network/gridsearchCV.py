@@ -28,14 +28,14 @@ def build_model(unit1=8, unit2= 8):
 
     model.compile(
         loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits = True),
-        optimizer=tf.keras.optimizers.Adam(learning_rate=0.00001),
+        optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001),
     )
     return model
 
 params = {'batch_size': [20, 32],
           'epochs': [50],
-          'model__unit1': [4, 8, 16],
-          'model__unit2': [4, 8, 16]}
+          'model__unit1': [128, 256, 512],
+          'model__unit2': [128, 256, 512]}
 
 model = KerasClassifier(model= build_model, verbose= 0)
 
@@ -51,6 +51,3 @@ gs.fit(x, y)
 
 print("Best Parameters:", gs.best_params_)
 print("Best Score:", gs.best_score_)
-'''
-
-'''
