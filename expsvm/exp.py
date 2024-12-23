@@ -33,7 +33,7 @@ class_name = {
     0: 'Health',
     1: 'Depression'
 }
-data = "../datasets/final_dataset"
+data = "./datasets"
 
 train_data = pd.read_csv(os.path.join(data, 'train.csv'))[:10000]
 
@@ -69,11 +69,21 @@ print('----------------------------------------------------------')
 # x_train, x_test, y_train, y_test = model_selection.train_test_split(x, y, test_size=0.2, random_state=42)
 print(x.columns)
 
+print('**********************')
 print(x['Sleep Duration'].value_counts())
+print('-*-')
 x['Sleep Duration'] = x['Sleep Duration'].apply(extract_sleep_hours)
+print(x['Sleep Duration'].value_counts())
+print('**********************')
 
+print('**********************')
+print(x['Dietary Habits'].value_counts())
+print('-*-')
 # print(x['Dietary Habits'].value_counts())
 x['Dietary Habits'] = x['Dietary Habits'].apply(map_dietary_habits)
+print(x['Dietary Habits'].value_counts())
+print('**********************')
+
 
 print(x['Degree'].value_counts())
 
